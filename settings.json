@@ -12,15 +12,9 @@
 //
 {
   "multi_cursor_modifier": "cmd_or_ctrl",
-  //"ui_font_family": "Liberation Mono",
-  //"buffer_font_family": "Liberation Mono",
-  //"buffer_font_family": "Liberation Mono",
-  //"buffer_font_family": "DejaVuSansMono",
-  //"buffer_font_family": "Zed-Mono-Bold-Extended",
-  //"buffer_font_weight": 500,
-  "buffer_font_size": 16,
-  // "ui_font_size": 16,
-  // "buffer_font_size": 16,
+  "buffer_font_size": 18,
+  "buffer_font_family": "Bitstream Vera Sans Mono",
+  "buffer_font_weight": 400,
   //
   "tab_size": 2,
   "buffer_line_height": "standard",
@@ -74,7 +68,11 @@
   "features": {
     "copilot": false
   },
-  "theme": "One Light",
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "One Dark"
+  },
   "experimental.theme_overrides": {
     "editor.wrap_guide": "#CCC",
     "editor.active_wrap_guide": "#CCC",
