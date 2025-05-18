@@ -125,6 +125,10 @@
     "diagnostics": false,
     "metrics": false
   },
+  "notification_panel": {
+    // Whether to show the notification panel button in the status bar.
+    "button": false,
+  },
   "agent": {
     // Version of this setting.
     "version": "2",
