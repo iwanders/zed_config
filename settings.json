@@ -10,6 +10,7 @@
 // // https://github.com/zed-industries/zed/issues/8014#issuecomment-2031041450
 // https://github.com/zed-industries/zed/blob/main/assets/themes/one/one.json
 //
+
 {
   "multi_cursor_modifier": "cmd_or_ctrl",
   "buffer_font_size": 18,
@@ -124,6 +125,16 @@
     "diagnostics": false,
     "metrics": false
   },
+  "agent": {
+    // Version of this setting.
+    "version": "2",
+    // Whether the agent is enabled.
+    "enabled": false,
+  },
+  "collaboration_panel": {
+    // Whether to show the collaboration panel button in the status bar.
+    "button": false,
+  },
   "autosave": "on_focus_change",
   "inlay_hints": {
     "enabled": true,
@@ -135,8 +146,8 @@
   },
   "diagnostics": {
     "inline": {
-      "enabled": true,
-      "update_debounce_ms": 150,
+      "enabled": false,
+      "update_debounce_ms": 5000,
       "padding": 4,
       "min_column": 0,
       "max_severity": null
