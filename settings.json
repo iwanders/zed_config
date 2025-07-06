@@ -64,6 +64,10 @@
       "tab_size": 4,
       "indent_size": 4,
       "remove_trailing_whitespace_on_save": false
+    },
+    "Rust": {
+      "use_autoclose": false,
+      "use_on_type_format": false
     }
   },
   "features": {
@@ -127,17 +131,17 @@
   },
   "notification_panel": {
     // Whether to show the notification panel button in the status bar.
-    "button": false,
+    "button": false
   },
   "agent": {
     // Version of this setting.
     "version": "2",
     // Whether the agent is enabled.
-    "enabled": false,
+    "enabled": false
   },
   "collaboration_panel": {
     // Whether to show the collaboration panel button in the status bar.
-    "button": false,
+    "button": false
   },
   "autosave": "on_focus_change",
   "inlay_hints": {
