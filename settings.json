@@ -135,7 +135,6 @@
   },
   "agent": {
     // Version of this setting.
-    "version": "2",
     // Whether the agent is enabled.
     "enabled": false
   },
