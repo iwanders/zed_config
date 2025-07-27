@@ -267,13 +267,11 @@
         "show_semantic_tokens_decorations_sticky_stickiness": 1,
         "show_completion_documentation": true,
         "show_completions_on_input": true
-      },
-      "rust-analyzer": {
-        "initialization_options": {
-          "checkOnSave": {
-            "command": "clippy"
-          }
-        }
+      }
+    },
+    "rust-analyzer": {
+      "initialization_options": {
+        "completion": { "autoimport": { "enable": false } }
       }
     }
   },
