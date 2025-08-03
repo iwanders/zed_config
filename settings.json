@@ -162,11 +162,11 @@
   },
   "lsp": {
     "clangd": {
-      "binary": {
-        "path": "/home/iwanders/.nix-profile/bin/clangd"
-      },
+      //"binary": {
+      //  "path": "/home/iwanders/.nix-profile/bin/clangd"
+      //},
       "enabled": true,
-      "version": "12.0.0",
+      //"version": "12.0.0",
       "url": "https://clangd.zedapp.org",
       "update": true,
       "auto_update": true,
