@@ -17,7 +17,7 @@
   "buffer_font_family": "Bitstream Vera Sans Mono",
   "buffer_font_weight": 400,
   //
-  "tab_size": 2,
+  "tab_size": 4,
   "buffer_line_height": "standard",
   "current_line_highlight": "gutter",
   "show_wrap_guides": true,
