@@ -10,10 +10,8 @@
 // // https://github.com/zed-industries/zed/issues/8014#issuecomment-2031041450
 // https://github.com/zed-industries/zed/blob/main/assets/themes/one/one.json
 //
-
 {
     "use_auto_surround": false,
-    "restore_on_startup": "none",
     "multi_cursor_modifier": "cmd_or_ctrl",
     "buffer_font_size": 17,
     "buffer_font_family": "Bitstream Vera Sans Mono",
@@ -29,19 +27,19 @@
     "git": {
         "git_gutter": "tracked_files",
         "inline_blame": {
-            "enabled": false
-        }
+            "enabled": false,
+        },
     },
     "preview_tabs": {
         "enabled": false,
         "enable_preview_from_file_finder": false,
-        "enable_keep_preview_on_code_navigation": false
+        "enable_keep_preview_on_code_navigation": false,
     },
     "file_types": {
         // "C++": ["c"],
         //"TOML": ["MyLockFile"],
         //"Dockerfile": ["Dockerfile*"],
-        "XML": ["*launch"]
+        "XML": ["*launch"],
     },
     "languages": {
         "C++": {
@@ -51,32 +49,27 @@
             "extend_comment_on_newline": true,
             //"remove_trailing_whitespace_on_save": true,
             "tab_size": 2,
-            "indent_size": 2,
             "show_wrap_guides": true,
             "wrap_guides": [120],
-            "indent_style": "space",
             "code_actions_on_format": {
-                "clangd": true
+                "clangd": true,
             },
             "always_treat_brackets_as_autoclosed": true,
             "ensure_final_newline_on_save": true,
-            "show_copilot_suggestions": false
         },
         "Python": {
             "tab_size": 4,
-            "indent_size": 4,
-            "remove_trailing_whitespace_on_save": false
+            "remove_trailing_whitespace_on_save": false,
         },
         "Rust": {
             "use_autoclose": false,
-            "use_on_type_format": false
-        }
+            "use_on_type_format": false,
+        },
     },
-    "features": {},
     "theme": {
         "mode": "system",
         "light": "One Light",
-        "dark": "One Dark"
+        "dark": "One Dark",
     },
     "experimental.theme_overrides": {
         "editor.wrap_guide": "#CCC",
@@ -85,79 +78,79 @@
         "editor.background": "#ffffff",
         "syntax": {
             "comment": {
-                "color": "#007f00"
+                "color": "#007f00",
                 //"font_weight": 900
             },
             "string": {
-                "color": "#7f007f"
+                "color": "#7f007f",
                 //"font_weight": 900
             },
             "variable": {
-                "color": "#000000"
+                "color": "#000000",
                 //"font_weight": 900
             },
             "type": {
-                "color": "#000000"
+                "color": "#000000",
                 //"font_weight": 900
             },
             "function": {
-                "color": "#000000"
+                "color": "#000000",
                 //"font_weight": 900
             },
             "keyword": {
                 "color": "#00007f",
-                "font_weight": 600
+                "font_weight": 600,
             },
             "property": {
-                "color": "#00007f"
+                "color": "#00007f",
                 //"font_style": null,
                 //"font_weight": null
             },
             "constant": {
                 "color": "#bf956aff",
-                "font_weight": 600
+                "font_weight": 600,
             },
             "punctuation.bracket": {
                 //"color": "#b2b9c6ff",
                 //"font_style": null,
-                "font_weight": 600
-            }
-        }
+                "font_weight": 600,
+            },
+        },
     },
     "telemetry": {
         "diagnostics": false,
-        "metrics": false
+        "metrics": false,
     },
     "notification_panel": {
         // Whether to show the notification panel button in the status bar.
-        "button": false
+        "button": false,
     },
     "agent": {
         // Version of this setting.
         // Whether the agent is enabled.
         "inline_assistant_model": {
             "provider": "ollama",
-            "model": "gemma3:12b"
+            "model": "gemma3:12b",
         },
         "profiles": {
             "sdfsdf": {
                 "name": "sdfsdf",
                 "tools": {},
                 "enable_all_context_servers": false,
-                "context_servers": {}
-            }
+                "context_servers": {},
+            },
         },
         "enable_feedback": false,
         "default_profile": "ask",
         "default_model": {
             "provider": "ollama",
-            "model": "gemma3:12b"
+            "model": "qwen3:8b",
         },
-        "enabled": true
+        "enabled": true,
     },
     "collaboration_panel": {
         // Whether to show the collaboration panel button in the status bar.
-        "button": false
+        "button": false,
     },
     "autosave": "on_focus_change",
     "inlay_hints": {
@@ -166,7 +159,7 @@
         "show_parameter_hints": true,
         "show_other_hints": true,
         "edit_debounce_ms": 700,
-        "scroll_debounce_ms": 50
+        "scroll_debounce_ms": 50,
     },
     "diagnostics": {
         "inline": {
@@ -174,123 +167,15 @@
             "update_debounce_ms": 5000,
             "padding": 4,
             "min_column": 0,
-            "max_severity": null
-        }
+            "max_severity": null,
+        },
     },
     "lsp": {
-        "clangd": {
-            //"binary": {
-            //  "path": "/home/iwanders/.nix-profile/bin/clangd"
-            //},
-            "enabled": true,
-            //"version": "12.0.0",
-            "url": "https://clangd.zedapp.org",
-            "update": true,
-            "auto_update": true,
-            // "auto_update_interval": 86400,
-            "auto_update_interval": 86400,
-            "auto_update_check": true,
-            "auto_update_check_interval": 86400,
-            "auto_update_check_last": 0,
-            "initialization_options": {
-                "clangd": {
-                    "completion": {
-                        "detailedLabel": true
-                    },
-                    "diagnostics": {
-                        "onOpen": true,
-                        "onSave": true
-                    },
-                    "highlight": {
-                        "lsRanges": true
-                    },
-                    "hover": {
-                        "contentFormat": ["markdown", "plaintext"]
-                    },
-                    "semanticHighlighting": true,
-                    "workspaceSymbol": {
-                        "sort": true
-                    },
-                    "codeLens": {
-                        "localVariables": true
-                    },
-                    "foldingRange": {
-                        "rangeLimit": 5000
-                    },
-                    "selectionRange": true,
-                    "semanticTokens": {
-                        "enabled": true,
-                        "legend": {
-                            "tokenTypes": [
-                                "namespace",
-                                "type",
-                                "class",
-                                "enum",
-                                "interface",
-                                "struct",
-                                "typeParameter",
-                                "parameter",
-                                "variable",
-                                "property",
-                                "enumMember",
-                                "event",
-                                "function",
-                                "method",
-                                "macro",
-                                "keyword",
-                                "modifier",
-                                "comment",
-                                "string",
-                                "number",
-                                "regexp",
-                                "operator"
-                            ],
-                            "tokenModifiers": [
-                                "declaration",
-                                "definition",
-                                "readonly",
-                                "static",
-                                "deprecated",
-                                "abstract",
-                                "async",
-                                "modification",
-                                "documentation",
-                                "defaultLibrary"
-                            ]
-                        }
-                    }
-                },
-                "show_diagnostics": true,
-                "show_hover": true,
-                "show_references": true,
-                "show_definition": true,
-                "show_document_symbols": true,
-                "show_workspace_symbols": true,
-                "show_code_actions": true,
-                "show_code_lens": true,
-                "show_formatting": true,
-                "show_rename": true,
-                "show_signature_help": true,
-                "show_type_hierarchy": true,
-                "show_semantic_tokens": true,
-                "show_semantic_highlighting": true,
-                "show_semantic_tokens_legend": true,
-                "show_semantic_tokens_legend_hover": true,
-                "show_semantic_tokens_hover": true,
-                "show_semantic_tokens_decorations": true,
-                "show_semantic_tokens_decorations_hover": true,
-                "show_semantic_tokens_decorations_sticky": true,
-                "show_semantic_tokens_decorations_sticky_hover": true,
-                "show_semantic_tokens_decorations_sticky_stickiness": 1,
-                "show_completion_documentation": true,
-                "show_completions_on_input": true
-            }
-        },
         "rust-analyzer": {
             "initialization_options": {
-                "completion": { "autoimport": { "enable": false } }
-            }
-        }
+                "completion": { "autoimport": { "enable": false } },
+            },
+        },
     },
     "project_panel": {
         // Whether to show the project panel button in the status bar
@@ -329,8 +214,8 @@
             ///    "always"
             /// 5. Never show the scrollbar:
             ///    "never"
-            "show": "auto"
+            "show": "auto",
         },
-        "show_diagnostics": "all"
-    }
+        "show_diagnostics": "all",
+    },
 }
