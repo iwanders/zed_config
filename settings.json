@@ -218,4 +218,44 @@
         },
         "show_diagnostics": "all",
     },
+    "edit_predictions": {
+        // Which edit prediction provider to use.
+        "provider": "ollama",
+        // A list of globs representing files that edit predictions should be disabled for.
+        // There's a sensible default list of globs already included.
+        // Any addition to this list will be merged with the default list.
+        // Globs are matched relative to the worktree root,
+        // except when starting with a slash (/) or equivalent in Windows.
+        "disabled_globs": [
+            "**/.env*",
+            "**/*.pem",
+            "**/*.key",
+            "**/*.cert",
+            "**/*.crt",
+            "**/.dev.vars",
+            "**/secrets.yml",
+            "**/.zed/settings.json", // zed project settings
+            "/**/zed/settings.json", // zed user settings
+            "/**/zed/keymap.json",
+        ],
+        // When to show edit predictions previews in buffer.
+        // This setting takes two possible values:
+        // 1. Display predictions inline when there are no language server completions available.
+        //     "mode": "eager"
+        // 2. Display predictions inline only when holding a modifier key (alt by default).
+        //     "mode": "subtle"
+        "mode": "eager",
+        // Copilot-specific settings
+        // "copilot": {
+        //   "enterprise_uri": "",
+        //   "proxy": "",
+        //   "proxy_no_verify": false
+        //   "enable_next_edit_suggestions": true
+        // },
+        "ollama": {
+            "api_url": "http://localhost:11434",
+            "model": "qwen2.5-coder:7b",
+            "max_output_tokens": 256,
+        },
+    },
 }
