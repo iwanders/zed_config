@@ -11,6 +11,13 @@
 // https://github.com/zed-industries/zed/blob/main/assets/themes/one/one.json
 //
 {
+    "cli_default_open_behavior": "new_window",
+    "outline_panel": {
+        "dock": "left"
+    },
+    "git_panel": {
+        "dock": "left"
+    },
     "use_auto_surround": false,
     "multi_cursor_modifier": "cmd_or_ctrl",
     "buffer_font_size": 17,
@@ -27,19 +34,19 @@
     "git": {
         "git_gutter": "tracked_files",
         "inline_blame": {
-            "enabled": false,
-        },
+            "enabled": false
+        }
     },
     "preview_tabs": {
         "enabled": false,
         "enable_preview_from_file_finder": false,
-        "enable_keep_preview_on_code_navigation": false,
+        "enable_keep_preview_on_code_navigation": false
     },
     "file_types": {
         // "C++": ["c"],
         //"TOML": ["MyLockFile"],
         //"Dockerfile": ["Dockerfile*"],
-        "XML": ["*launch"],
+        "XML": ["*launch"]
     },
     "languages": {
         "C++": {
@@ -52,24 +59,24 @@
             "show_wrap_guides": true,
             "wrap_guides": [120],
             "code_actions_on_format": {
-                "clangd": true,
+                "clangd": true
             },
             "always_treat_brackets_as_autoclosed": true,
-            "ensure_final_newline_on_save": true,
+            "ensure_final_newline_on_save": true
         },
         "Python": {
             "tab_size": 4,
-            "remove_trailing_whitespace_on_save": false,
+            "remove_trailing_whitespace_on_save": false
         },
         "Rust": {
             "use_autoclose": false,
-            "use_on_type_format": false,
-        },
+            "use_on_type_format": false
+        }
     },
     "theme": {
         "mode": "system",
         "light": "One Light",
-        "dark": "One Dark",
+        "dark": "One Dark"
     },
     "experimental.theme_overrides": {
         "editor.wrap_guide": "#CCC",
@@ -78,79 +85,82 @@
         "editor.background": "#ffffff",
         "syntax": {
             "comment": {
-                "color": "#007f00",
+                "color": "#007f00"
                 //"font_weight": 900
             },
             "string": {
-                "color": "#7f007f",
+                "color": "#7f007f"
                 //"font_weight": 900
             },
             "variable": {
-                "color": "#000000",
+                "color": "#000000"
                 //"font_weight": 900
             },
             "type": {
-                "color": "#000000",
+                "color": "#000000"
                 //"font_weight": 900
             },
             "function": {
-                "color": "#000000",
+                "color": "#000000"
                 //"font_weight": 900
             },
             "keyword": {
                 "color": "#00007f",
-                "font_weight": 600,
+                "font_weight": 600
             },
             "property": {
-                "color": "#00007f",
+                "color": "#00007f"
                 //"font_style": null,
                 //"font_weight": null
             },
             "constant": {
                 "color": "#bf956aff",
-                "font_weight": 600,
+                "font_weight": 600
             },
             "punctuation.bracket": {
                 //"color": "#b2b9c6ff",
                 //"font_style": null,
-                "font_weight": 600,
-            },
-        },
+                "font_weight": 600
+            }
+        }
     },
     "telemetry": {
         "diagnostics": false,
-        "metrics": false,
+        "metrics": false
     },
     "notification_panel": {
         // Whether to show the notification panel button in the status bar.
-        "button": false,
+        "button": false
     },
     "agent": {
         // Version of this setting.
         // Whether the agent is enabled.
+        "dock": "right",
         "inline_assistant_model": {
             "provider": "ollama",
-            "model": "gemma3:12b",
+            "model": "qwen3.5:4b"
         },
         "profiles": {
             "sdfsdf": {
                 "name": "sdfsdf",
                 "tools": {},
                 "enable_all_context_servers": false,
-                "context_servers": {},
-            },
+                "context_servers": {}
+            }
         },
         "enable_feedback": false,
-        "default_profile": "ask",
+        "default_profile": "write",
         "default_model": {
+            "enable_thinking": true,
             "provider": "ollama",
-            "model": "qwen3:8b",
+            "model": "qwen3.5:9b"
         },
-        "enabled": true,
+        "enabled": true
     },
     "collaboration_panel": {
         // Whether to show the collaboration panel button in the status bar.
-        "button": false,
+        "dock": "left",
+        "button": false
     },
     "autosave": "on_focus_change",
     "inlay_hints": {
@@ -159,7 +169,7 @@
         "show_parameter_hints": true,
         "show_other_hints": true,
         "edit_debounce_ms": 700,
-        "scroll_debounce_ms": 50,
+        "scroll_debounce_ms": 50
     },
     "diagnostics": {
         "inline": {
@@ -167,15 +177,27 @@
             "update_debounce_ms": 5000,
             "padding": 4,
             "min_column": 0,
-            "max_severity": null,
-        },
+            "max_severity": null
+        }
     },
     "lsp": {
         "rust-analyzer": {
             "initialization_options": {
-                "completion": { "autoimport": { "enable": false } },
-            },
+                "completion": { "autoimport": { "enable": false } }
+            }
         },
+        "pyright": {
+            "settings": {
+                "python.analysis.autoImportCompletions": false
+            }
+        },
+        "basedpyright": {
+            "settings": {
+                "basedpyright.analysis": {
+                    "autoImportCompletions": false
+                }
+            }
+        }
     },
     "project_panel": {
         // Whether to show the project panel button in the status bar
@@ -214,9 +236,9 @@
             ///    "always"
             /// 5. Never show the scrollbar:
             ///    "never"
-            "show": "auto",
+            "show": "auto"
         },
-        "show_diagnostics": "all",
+        "show_diagnostics": "all"
     },
     "edit_predictions": {
         // Which edit prediction provider to use.
@@ -236,7 +258,7 @@
             "**/secrets.yml",
             "**/.zed/settings.json", // zed project settings
             "/**/zed/settings.json", // zed user settings
-            "/**/zed/keymap.json",
+            "/**/zed/keymap.json"
         ],
         // When to show edit predictions previews in buffer.
         // This setting takes two possible values:
@@ -244,7 +266,7 @@
         //     "mode": "eager"
         // 2. Display predictions inline only when holding a modifier key (alt by default).
         //     "mode": "subtle"
-        "mode": "eager",
+        "mode": "subtle",
         // Copilot-specific settings
         // "copilot": {
         //   "enterprise_uri": "",
@@ -255,7 +277,7 @@
         "ollama": {
             "api_url": "http://localhost:11434",
             "model": "qwen2.5-coder:7b",
-            "max_output_tokens": 256,
-        },
-    },
+            "max_output_tokens": 64
+        }
+    }
 }
