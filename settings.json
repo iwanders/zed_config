@@ -10,6 +10,7 @@
 // // https://github.com/zed-industries/zed/issues/8014#issuecomment-2031041450
 // https://github.com/zed-industries/zed/blob/main/assets/themes/one/one.json
 //
+// https://github.com/zed-industries/zed/blob/main/assets/settings/default.json#L2
 {
     "cli_default_open_behavior": "new_window",
     "outline_panel": {
@@ -132,28 +133,34 @@
         // Whether to show the notification panel button in the status bar.
         "button": false
     },
+    "language_models": {
+        "openai_compatible": {
+            "local_llama": {
+                "api_url": "http://localhost:8080/v1",
+                "api_key": "optional-key-if-required",
+                "available_models": [
+                    {
+                        "name": "Qwen3.5-4B-Q4_K_M",
+                        "max_tokens": 16384
+                    }
+                ]
+            }
+        }
+    },
     "agent": {
         // Version of this setting.
         // Whether the agent is enabled.
         "dock": "right",
-        "inline_assistant_model": {
-            "provider": "ollama",
-            "model": "qwen3.5:4b"
-        },
-        "profiles": {
-            "sdfsdf": {
-                "name": "sdfsdf",
-                "tools": {},
-                "enable_all_context_servers": false,
-                "context_servers": {}
-            }
-        },
+        // https://github.com/zed-industries/zed/issues/53135#issuecomment-4362983433
+        // inline assist doesn't support thinking atm.
+        "inline_assistant_use_streaming_tools": false,
+        "profiles": {},
         "enable_feedback": false,
         "default_profile": "write",
         "default_model": {
-            "enable_thinking": true,
-            "provider": "ollama",
-            "model": "qwen3.5:9b"
+            "enable_thinking": false,
+            "provider": "local_llama",
+            "model": "Qwen3.5-4B-Q4_K_M"
         },
         "enabled": true
     },
@@ -242,7 +249,7 @@
     },
     "edit_predictions": {
         // Which edit prediction provider to use.
-        "provider": "ollama",
+        "provider": "open_ai_compatible_api",
         // A list of globs representing files that edit predictions should be disabled for.
         // There's a sensible default list of globs already included.
         // Any addition to this list will be merged with the default list.
@@ -274,10 +281,17 @@
         //   "proxy_no_verify": false
         //   "enable_next_edit_suggestions": true
         // },
-        "ollama": {
-            "api_url": "http://localhost:11434",
-            "model": "qwen2.5-coder:7b",
-            "max_output_tokens": 64
+        //"ollama": {
+        //  "api_url": "http://localhost:11434",
+        //  "model": "qwen2.5-coder:7b",
+        //  "max_output_tokens": 64
+        // }
+        //
+        "open_ai_compatible_api": {
+            "api_url": "http://localhost:8080/v1/completions",
+            "prompt_format": "qwen",
+            "max_output_tokens": 128,
+            "model": "Qwen3.5-4B-Q4_K_M"
         }
     }
 }
