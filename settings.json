@@ -72,6 +72,9 @@
         "Rust": {
             "use_autoclose": false,
             "use_on_type_format": false
+        },
+        "YAML": {
+            "format_on_save": "off"
         }
     },
     "theme": {
@@ -136,7 +139,7 @@
     "language_models": {
         "openai_compatible": {
             "local_llama": {
-                "api_url": "http://localhost:8080/v1",
+                "api_url": "http://localhost:6001/v1",
                 "api_key": "optional-key-if-required",
                 "available_models": [
                     {
@@ -148,9 +151,6 @@
         }
     },
     "agent": {
-        // Version of this setting.
-        // Whether the agent is enabled.
-        "dock": "right",
         // https://github.com/zed-industries/zed/issues/53135#issuecomment-4362983433
         // inline assist doesn't support thinking atm.
         "inline_assistant_use_streaming_tools": false,
@@ -163,6 +163,16 @@
             "model": "Qwen3.5-4B-Q4_K_M"
         },
         "enabled": true
+    },
+    "edit_predictions": {
+        "provider": "open_ai_compatible_api",
+        "mode": "subtle",
+        "open_ai_compatible_api": {
+            "api_url": "http://localhost:6001/v1/completions",
+            "prompt_format": "qwen",
+            "max_output_tokens": 128,
+            "model": "Qwen/Qwen2.5-Coder-0.5B-Instruct-GGUF:Q4_K_M"
+        }
     },
     "collaboration_panel": {
         // Whether to show the collaboration panel button in the status bar.
@@ -246,52 +256,5 @@
             "show": "auto"
         },
         "show_diagnostics": "all"
-    },
-    "edit_predictions": {
-        // Which edit prediction provider to use.
-        "provider": "open_ai_compatible_api",
-        // A list of globs representing files that edit predictions should be disabled for.
-        // There's a sensible default list of globs already included.
-        // Any addition to this list will be merged with the default list.
-        // Globs are matched relative to the worktree root,
-        // except when starting with a slash (/) or equivalent in Windows.
-        "disabled_globs": [
-            "**/.env*",
-            "**/*.pem",
-            "**/*.key",
-            "**/*.cert",
-            "**/*.crt",
-            "**/.dev.vars",
-            "**/secrets.yml",
-            "**/.zed/settings.json", // zed project settings
-            "/**/zed/settings.json", // zed user settings
-            "/**/zed/keymap.json"
-        ],
-        // When to show edit predictions previews in buffer.
-        // This setting takes two possible values:
-        // 1. Display predictions inline when there are no language server completions available.
-        //     "mode": "eager"
-        // 2. Display predictions inline only when holding a modifier key (alt by default).
-        //     "mode": "subtle"
-        "mode": "subtle",
-        // Copilot-specific settings
-        // "copilot": {
-        //   "enterprise_uri": "",
-        //   "proxy": "",
-        //   "proxy_no_verify": false
-        //   "enable_next_edit_suggestions": true
-        // },
-        //"ollama": {
-        //  "api_url": "http://localhost:11434",
-        //  "model": "qwen2.5-coder:7b",
-        //  "max_output_tokens": 64
-        // }
-        //
-        "open_ai_compatible_api": {
-            "api_url": "http://localhost:8080/v1/completions",
-            "prompt_format": "qwen",
-            "max_output_tokens": 128,
-            "model": "Qwen3.5-4B-Q4_K_M"
-        }
     }
 }
