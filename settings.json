@@ -137,22 +137,17 @@
         "button": false
     },
     "language_models": {
-        "openai_compatible": {
-            "local_llama": {
-                "api_url": "http://localhost:6001/v1",
-                "api_key": "optional-key-if-required",
-                "available_models": [
-                    {
-                        "name": "Qwen3.5-4B-Q4_K_M",
-                        "max_tokens": 16384
-                    }
-                ]
-            }
+        "llama.cpp": {
+            "api_url": "http://localhost:6001"
         }
     },
     "agent": {
         // https://github.com/zed-industries/zed/issues/53135#issuecomment-4362983433
         // inline assist doesn't support thinking atm.
+        // llama.cpp was added in https://github.com/zed-industries/zed/pull/59964/changes
+        // see that for config options.
+        "dock": "right",
+        "sidebar_side": "right",
         "inline_assistant_use_streaming_tools": false,
         "profiles": {},
         "enable_feedback": false,
