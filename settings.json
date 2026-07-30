@@ -100,6 +100,10 @@
                 "color": "#000000"
                 //"font_weight": 900
             },
+            "variable.parameter": {
+                "color": "#000000"
+                //"font_weight": 900
+            },
             "type": {
                 "color": "#000000"
                 //"font_weight": 900
@@ -149,17 +153,36 @@
         "dock": "right",
         "sidebar_side": "right",
         "inline_assistant_use_streaming_tools": false,
-        "profiles": {},
+        "profiles": {
+            "iw-minimal": {
+                "default_model": {
+                    "provider": "llama.cpp",
+                    "model": "unsloth/Qwen3.5-4B-GGUF:Q4_K_M",
+                    "enable_thinking": false
+                },
+                "name": "iw_minimal",
+                "tools": {
+                    "skill": false
+                },
+                "enable_all_context_servers": false,
+                "context_servers": {}
+            }
+        },
         "enable_feedback": false,
-        "default_profile": "write",
+        "default_profile": "ask",
         "default_model": {
             "enable_thinking": false,
-            "provider": "local_llama",
-            "model": "Qwen3.5-4B-Q4_K_M"
+            "provider": "llama.cpp",
+            "model": "unsloth/Qwen3.5-4B-GGUF:Q4_K_M"
         },
         "enabled": true
     },
     "edit_predictions": {
+        "codestral": {
+            "model": "",
+            "api_url": ""
+        },
+        "allow_data_collection": "no",
         "provider": "open_ai_compatible_api",
         "mode": "subtle",
         "open_ai_compatible_api": {
