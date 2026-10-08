@@ -74,7 +74,25 @@
             "use_on_type_format": false
         },
         "YAML": {
-            "format_on_save": "off"
+            "format_on_save": "off",
+            "language_servers": [],
+            "enable_language_server": false
+        },
+        "JavaScript": {
+            "language_servers": [],
+            "enable_language_server": false
+        },
+        "HTML": {
+            "language_servers": [],
+            "enable_language_server": false
+        },
+        "Shell Script": {
+            "language_servers": [],
+            "enable_language_server": false
+        },
+        "json": {
+            "language_servers": [],
+            "enable_language_server": false
         }
     },
     "theme": {
@@ -136,10 +154,6 @@
         "diagnostics": false,
         "metrics": false
     },
-    "notification_panel": {
-        // Whether to show the notification panel button in the status bar.
-        "button": false
-    },
     "language_models": {
         "llama.cpp": {
             "api_url": "http://localhost:6001"
@@ -150,8 +164,15 @@
         // inline assist doesn't support thinking atm.
         // llama.cpp was added in https://github.com/zed-industries/zed/pull/59964/changes
         // see that for config options.
+        "threads_sidebar": {
+            "position": "right"
+        },
+        "inline_assistant_model": {
+            "provider": "llama.cpp",
+            "model": "unsloth/Qwen3.5-9B-GGUF:Q4_K_M",
+            "enable_thinking": false
+        },
         "dock": "right",
-        "sidebar_side": "right",
         "inline_assistant_use_streaming_tools": false,
         "profiles": {
             "iw-minimal": {
@@ -169,7 +190,7 @@
             }
         },
         "enable_feedback": false,
-        "default_profile": "ask",
+        "default_profile": "minimal",
         "default_model": {
             "enable_thinking": false,
             "provider": "llama.cpp",
@@ -236,6 +257,7 @@
     },
     "project_panel": {
         // Whether to show the project panel button in the status bar
+        "folder_indicator": "icon",
         "button": true,
         // Default width of the project panel.
         "default_width": 240,
@@ -244,7 +266,6 @@
         // Whether to show file icons in the project panel.
         "file_icons": true,
         // Whether to show folder icons or chevrons for directories in the project panel.
-        "folder_icons": true,
         // Whether to show the git status in the project panel.
         "git_status": true,
         // Amount of indentation for nested items.
